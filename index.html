@@ -3,26 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phone Access Demo</title>
+  <title>Interactive CV - Nick</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="app-shell">
     <header>
-      <h1>Phone Access Demo</h1>
-      <p>Open this app from your phone using the published URL.</p>
-    </header>
-
-    <section class="card">
-      <label for="note">Type a note for your next task:</label>
-      <textarea id="note" placeholder="Write something..." rows="4"></textarea>
-      <button id="saveButton">Save note</button>
-      <div id="savedMessage" class="message"></div>
-    </section>
-
-    <section class="card">
+      <h1>Nicolas Diacono's Interactive CV</h1>
+      <p>Explore my journey as a Systems Technician and Qualified Electrician.</p>
       <button id="toggleButton">Switch theme</button>
       <p id="themeStatus">Current theme: light</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-button active" data-tab="about">About</button>
+      <button class="tab-button" data-tab="skills">Skills</button>
+      <button class="tab-button" data-tab="experience">Experience</button>
+      <button class="tab-button" data-tab="projects">Projects</button>
+      <button class="tab-button" data-tab="contact">Contact</button>
+    </nav>
+
+    <section id="about" class="tab-content active">
+      <h2>About Me</h2>
+      <p>Hi, I'm Nicolas Diacono — a Systems Technician and qualified Electrician based in Christchurch, New Zealand. I work in Microinverter Engineering, combining hands-on experience with technical insight to support solar technologies.</p>
+      <p>With a strong foundation in residential and commercial PV installations, I've transitioned into automation, productivity tools, and test case generation using Python. I enjoy building intuitive GUI tools that streamline workflows.</p>
+      <p>Outside of work, I'm passionate about fitness, surfing, and outdoor activities. I love learning new technologies and spending time with friends and family.</p>
+      <img src="https://via.placeholder.com/150" alt="Nicolas Diacono" class="profile-pic">
+    </section>
+
+    <section id="skills" class="tab-content">
+      <h2>Skills & Technologies</h2>
+      <div class="skill">
+        <span>Electrical Systems (Single & Three Phase)</span>
+        <div class="skill-bar"><div class="skill-fill" data-skill="95"></div></div>
+      </div>
+      <div class="skill">
+        <span>Solar PV Installation & Commissioning</span>
+        <div class="skill-bar"><div class="skill-fill" data-skill="95"></div></div>
+      </div>
+      <div class="skill">
+        <span>Python (Automation & GUI Tools)</span>
+        <div class="skill-bar"><div class="skill-fill" data-skill="75"></div></div>
+      </div>
+      <div class="skill">
+        <span>Test Equipment & Diagnostics</span>
+        <div class="skill-bar"><div class="skill-fill" data-skill="90"></div></div>
+      </div>
+      <div class="skill">
+        <span>PCB Modification & Soldering</span>
+        <div class="skill-bar"><div class="skill-fill" data-skill="70"></div></div>
+      </div>
+    </section>
+
+    <section id="experience" class="tab-content">
+      <h2>Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Enphase Energy</h3>
+          <p>Systems Technician | October 2022 - Present</p>
+          <p>Hands-on specialist in residential and small commercial energy systems, combining electrical expertise with system design and testing.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Innovationz Electrical</h3>
+          <p>Senior Electrician / Solar Specialist | June 2020 - October 2022</p>
+          <p>Led installation, maintenance, and optimization of residential and commercial solar energy systems.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Solar City</h3>
+          <p>Senior Electrician / Installation Supervisor | June 2018 - June 2020</p>
+          <p>Responsible for leading installation teams in delivering residential and small commercial solar projects.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Jace Electrical</h3>
+          <p>Electrician | 2016 - 2018</p>
+          <p>Managed service department overseeing residential and commercial electrical work.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Owl Electrical</h3>
+          <p>Apprentice / Electrician | 2013 - 2016</p>
+          <p>Provided electrical services across commercial and domestic sectors.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="tab-content">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Interactive CV App</h3>
+          <p>This very app! Built with HTML, CSS, JS to showcase skills interactively.</p>
+          <a href="https://nick-app.vercel.app" class="project-link">View Live</a>
+        </div>
+        <div class="project-card">
+          <h3>Python GUI Tools</h3>
+          <p>Custom automation and inventory management tools for engineering workflows.</p>
+          <a href="#" class="project-link">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3>Solar System Designs</h3>
+          <p>Designed and implemented efficient solar solutions for residential and commercial sites.</p>
+          <a href="#" class="project-link">View Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="tab-content">
+      <h2>Contact</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="formMessage"></div>
+      <p>Email: <a href="mailto:Nidiaco03@gmail.com">Nidiaco03@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/nicolas-diacono" target="_blank">linkedin.com/in/nicolas-diacono</a></p>
+      <p>GitHub: <a href="https://github.com/Nidiaco" target="_blank">github.com/Nidiaco</a></p>
+      <p>Location: Christchurch, New Zealand</p>
     </section>
   </main>
 
