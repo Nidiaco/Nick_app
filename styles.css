@@ -114,13 +114,14 @@ button:hover {
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
+  color: var(--text);
 }
 
-.tab-button.active {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
-}
+.tab-button i,
+.tab-button.active i,
+.icon-button i,
+.detail-toggle i {
+  color: inherit;
 
 .tab-content {
   display: none;
@@ -391,8 +392,7 @@ button:hover {
 }
 
 .detail-toggle {
-  border: 1px solid #d1d5db;
-  background: transparent;
+  border: 1px solid var(--muted);
   color: var(--accent);
   border-radius: 999px;
   padding: 0.55rem 0.85rem;
