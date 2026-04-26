@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phone Access Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <h1>Phone Access Demo</h1>
+      <p>Open this app from your phone using the published URL.</p>
+    </header>
+
+    <section class="card">
+      <label for="note">Type a note for your next task:</label>
+      <textarea id="note" placeholder="Write something..." rows="4"></textarea>
+      <button id="saveButton">Save note</button>
+      <div id="savedMessage" class="message"></div>
+    </section>
+
+    <section class="card">
+      <button id="toggleButton">Switch theme</button>
+      <p id="themeStatus">Current theme: light</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
