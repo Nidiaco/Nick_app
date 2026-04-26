@@ -117,11 +117,9 @@ button:hover {
   color: var(--text);
 }
 
-.tab-button i,
-.tab-button.active i,
-.icon-button i,
-.detail-toggle i {
-  color: inherit;
+.tab-button i {
+  margin-right: 0.35rem;
+}
 
 .tab-content {
   display: none;
