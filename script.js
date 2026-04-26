@@ -7,8 +7,20 @@ const formMessage = document.getElementById('formMessage');
 
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
-  themeStatus.textContent = `Current theme: ${theme}`;
+  updateThemeUI(theme);
   localStorage.setItem('cv-theme', theme);
+}
+
+function updateThemeUI(theme) {
+  if (themeStatus) {
+    themeStatus.textContent = `Current theme: ${theme}`;
+  }
+
+  if (toggleButton) {
+    toggleButton.innerHTML = theme === 'dark'
+      ? '<i class="bi bi-sun-fill"></i> Light Mode'
+      : '<i class="bi bi-moon-fill"></i> Dark Mode';
+  }
 }
 
 function loadTheme() {
@@ -23,6 +35,8 @@ function switchTab(targetTab) {
   const activeButton = document.querySelector(`[data-tab="${targetTab}"]`);
   const activeContent = document.getElementById(targetTab);
 
+  if (!activeButton || !activeContent) return;
+
   activeButton.classList.add('active');
   activeContent.classList.add('active');
 
@@ -31,21 +45,65 @@ function switchTab(targetTab) {
   }
 }
 
+let skillsAnimated = false;
+const detailToggles = document.querySelectorAll('.detail-toggle');
+const copyEmailBtn = document.getElementById('copyEmail');
+const emailAddress = 'Nidiaco03@gmail.com';
+
 function animateSkillBars() {
+  if (skillsAnimated) return;
   const skillFills = document.querySelectorAll('.skill-fill');
   skillFills.forEach(fill => {
     const skillLevel = fill.dataset.skill;
     fill.style.width = `${skillLevel}%`;
   });
+  skillsAnimated = true;
 }
 
 function handleFormSubmit(e) {
   e.preventDefault();
   const formData = new FormData(contactForm);
-  // Simulate form submission (in a real app, send to server)
   formMessage.textContent = 'Thank you for your message! (This is a demo - no email sent)';
-  formMessage.style.color = 'green';
+  formMessage.style.color = 'var(--accent)';
   contactForm.reset();
+}
+
+function toggleDetail(event) {
+  const button = event.currentTarget;
+  const detail = button.closest('.timeline-item').querySelector('.detail-content');
+  const isOpen = detail.classList.contains('active');
+  detail.classList.toggle('active');
+  button.innerHTML = isOpen ? '<i class="bi bi-chevron-down"></i> Show details' : '<i class="bi bi-chevron-up"></i> Hide details';
+}
+
+function copyEmail() {
+  if (!copyEmailBtn) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(emailAddress).then(() => {
+      copyEmailBtn.textContent = 'Copied!';
+      setTimeout(() => {
+        copyEmailBtn.innerHTML = '<i class="bi bi-clipboard-fill"></i> Copy Email';
+      }, 1800);
+    }).catch(() => {
+      window.prompt('Copy email address:', emailAddress);
+    });
+  } else {
+    window.prompt('Copy email address:', emailAddress);
+  }
+}
+
+function handleTabKey(event, button) {
+  const index = Array.from(tabButtons).indexOf(button);
+  if (event.key === 'ArrowRight') {
+    const next = tabButtons[(index + 1) % tabButtons.length];
+    next.focus();
+  } else if (event.key === 'ArrowLeft') {
+    const prev = tabButtons[(index - 1 + tabButtons.length) % tabButtons.length];
+    prev.focus();
+  } else if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    switchTab(button.dataset.tab);
+  }
 }
 
 tabButtons.forEach(button => {
@@ -53,9 +111,14 @@ tabButtons.forEach(button => {
     const target = button.dataset.tab;
     switchTab(target);
   });
+  button.addEventListener('keydown', event => handleTabKey(event, button));
 });
 
-contactForm.addEventListener('submit', handleFormSubmit);
+detailToggles.forEach(toggle => toggle.addEventListener('click', toggleDetail));
+
+if (copyEmailBtn) {
+  copyEmailBtn.addEventListener('click', copyEmail);
+}
 
 toggleButton.addEventListener('click', () => {
   const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';

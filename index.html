@@ -4,26 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interactive CV - Nick</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="app-shell">
     <header>
-      <h1>Nicolas Diacono's Interactive CV</h1>
-      <p>Explore my journey as a Systems Technician and Qualified Electrician.</p>
-      <button id="toggleButton">Switch theme</button>
-      <p id="themeStatus">Current theme: light</p>
+      <div class="hero-top">
+        <div>
+          <h1>Nicolas Diacono's Interactive CV</h1>
+          <p>Explore my journey as a Systems Technician and Qualified Electrician.</p>
+        </div>
+        <button id="toggleButton" class="icon-button"><i class="bi bi-moon-stars-fill"></i> Theme</button>
+      </div>
+
+      <div class="hero-badges">
+        <span class="badge-pill"><i class="bi bi-lightning-charge-fill"></i> Solar Tech</span>
+        <span class="badge-pill"><i class="bi bi-gear-fill"></i> Automation</span>
+        <span class="badge-pill"><i class="bi bi-tools"></i> Diagnostics</span>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <i class="bi bi-award-fill"></i>
+          <div>
+            <strong>5+ yrs</strong>
+            <span>Industry experience</span>
+          </div>
+        </article>
+        <article class="stat-card">
+          <i class="bi bi-lightning-fill"></i>
+          <div>
+            <strong>95%</strong>
+            <span>Solar installation</span>
+          </div>
+        </article>
+        <article class="stat-card">
+          <i class="bi bi-code-slash"></i>
+          <div>
+            <strong>Python</strong>
+            <span>Automation tools</span>
+          </div>
+        </article>
+      </div>
     </header>
 
-    <nav class="tabs">
-      <button class="tab-button active" data-tab="about">About</button>
-      <button class="tab-button" data-tab="skills">Skills</button>
-      <button class="tab-button" data-tab="experience">Experience</button>
-      <button class="tab-button" data-tab="projects">Projects</button>
-      <button class="tab-button" data-tab="contact">Contact</button>
+    <nav class="tabs" role="tablist" aria-label="CV Sections">
+      <button class="tab-button active" data-tab="about" role="tab"><i class="bi bi-person-circle"></i>About</button>
+      <button class="tab-button" data-tab="skills" role="tab"><i class="bi bi-tools"></i>Skills</button>
+      <button class="tab-button" data-tab="experience" role="tab"><i class="bi bi-briefcase-fill"></i>Experience</button>
+      <button class="tab-button" data-tab="projects" role="tab"><i class="bi bi-kanban-fill"></i>Projects</button>
+      <button class="tab-button" data-tab="gallery" role="tab"><i class="bi bi-images"></i>Gallery</button>
+      <button class="tab-button" data-tab="contact" role="tab"><i class="bi bi-envelope-fill"></i>Contact</button>
     </nav>
 
-    <section id="about" class="tab-content active">
+    <section id="about" class="tab-content active" role="tabpanel">
       <h2>About Me</h2>
       <p>Hi, I'm Nicolas Diacono — a Systems Technician and qualified Electrician based in Christchurch, New Zealand. I work in Microinverter Engineering, combining hands-on experience with technical insight to support solar technologies.</p>
       <p>With a strong foundation in residential and commercial PV installations, I've transitioned into automation, productivity tools, and test case generation using Python. I enjoy building intuitive GUI tools that streamline workflows.</p>
@@ -31,95 +66,203 @@
       <img src="https://via.placeholder.com/150" alt="Nicolas Diacono" class="profile-pic">
     </section>
 
-    <section id="skills" class="tab-content">
+    <section id="skills" class="tab-content" role="tabpanel">
       <h2>Skills & Technologies</h2>
-      <div class="skill">
-        <span>Electrical Systems (Single & Three Phase)</span>
+      <div class="skill-card">
+        <div class="skill-label"><span><i class="bi bi-bolt-fill"></i> Electrical Systems</span><span>95%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-skill="95"></div></div>
       </div>
-      <div class="skill">
-        <span>Solar PV Installation & Commissioning</span>
+      <div class="skill-card">
+        <div class="skill-label"><span><i class="bi bi-sun-fill"></i> Solar PV Installation</span><span>95%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-skill="95"></div></div>
       </div>
-      <div class="skill">
-        <span>Python (Automation & GUI Tools)</span>
+      <div class="skill-card">
+        <div class="skill-label"><span><i class="bi bi-filetype-py"></i> Python Automation</span><span>75%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-skill="75"></div></div>
       </div>
-      <div class="skill">
-        <span>Test Equipment & Diagnostics</span>
+      <div class="skill-card">
+        <div class="skill-label"><span><i class="bi bi-activity"></i> Diagnostics</span><span>90%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-skill="90"></div></div>
       </div>
-      <div class="skill">
-        <span>PCB Modification & Soldering</span>
+      <div class="skill-card">
+        <div class="skill-label"><span><i class="bi bi-wallet-fill"></i> PCB Soldering</span><span>70%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-skill="70"></div></div>
       </div>
+      <div class="tech-tags">
+        <span class="tech-tag"><i class="bi bi-wrench"></i> Oscilloscopes</span>
+        <span class="tech-tag"><i class="bi bi-cpu-fill"></i> Microinverters</span>
+        <span class="tech-tag"><i class="bi bi-git"></i> Git</span>
+        <span class="tech-tag"><i class="bi bi-box-seam"></i> Procurement</span>
+        <span class="tech-tag"><i class="bi bi-house-fill"></i> Home Automation</span>
+      </div>
     </section>
 
-    <section id="experience" class="tab-content">
+    <section id="experience" class="tab-content" role="tabpanel">
       <h2>Work Experience</h2>
       <div class="timeline">
-        <div class="timeline-item">
-          <h3>Enphase Energy</h3>
-          <p>Systems Technician | October 2022 - Present</p>
-          <p>Hands-on specialist in residential and small commercial energy systems, combining electrical expertise with system design and testing.</p>
-        </div>
-        <div class="timeline-item">
-          <h3>Innovationz Electrical</h3>
-          <p>Senior Electrician / Solar Specialist | June 2020 - October 2022</p>
-          <p>Led installation, maintenance, and optimization of residential and commercial solar energy systems.</p>
-        </div>
-        <div class="timeline-item">
-          <h3>Solar City</h3>
-          <p>Senior Electrician / Installation Supervisor | June 2018 - June 2020</p>
-          <p>Responsible for leading installation teams in delivering residential and small commercial solar projects.</p>
-        </div>
-        <div class="timeline-item">
-          <h3>Jace Electrical</h3>
-          <p>Electrician | 2016 - 2018</p>
-          <p>Managed service department overseeing residential and commercial electrical work.</p>
-        </div>
-        <div class="timeline-item">
-          <h3>Owl Electrical</h3>
-          <p>Apprentice / Electrician | 2013 - 2016</p>
-          <p>Provided electrical services across commercial and domestic sectors.</p>
-        </div>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Enphase Energy</h3>
+            <button type="button" class="detail-toggle"><i class="bi bi-chevron-down"></i> Show details</button>
+          </div>
+          <p class="timeline-meta">Systems Technician | October 2022 - Present</p>
+          <div class="detail-content">
+            <ul>
+              <li>Built and maintained residential and small commercial energy systems.</li>
+              <li>Developed Python tools for automation, inventory, and test case management.</li>
+              <li>Worked with oscilloscopes, grid simulators, and power analyzers.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Innovationz Electrical</h3>
+            <button type="button" class="detail-toggle"><i class="bi bi-chevron-down"></i> Show details</button>
+          </div>
+          <p class="timeline-meta">Senior Electrician / Solar Specialist | June 2020 - October 2022</p>
+          <div class="detail-content">
+            <ul>
+              <li>Led installations, maintenance, and commissioning for solar projects.</li>
+              <li>Coordinated teams and managed quality control on site.</li>
+              <li>Optimized systems for safety, reliability, and customer satisfaction.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Solar City</h3>
+            <button type="button" class="detail-toggle"><i class="bi bi-chevron-down"></i> Show details</button>
+          </div>
+          <p class="timeline-meta">Senior Electrician / Installation Supervisor | June 2018 - June 2020</p>
+          <div class="detail-content">
+            <ul>
+              <li>Managed teams delivering residential and commercial PV installs.</li>
+              <li>Handled commissioning, paperwork, and customer handovers.</li>
+              <li>Ensured compliance with electrical and safety standards.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Jace Electrical</h3>
+            <button type="button" class="detail-toggle"><i class="bi bi-chevron-down"></i> Show details</button>
+          </div>
+          <p class="timeline-meta">Electrician | 2016 - 2018</p>
+          <div class="detail-content">
+            <ul>
+              <li>Supported service and installation work for residential and commercial clients.</li>
+              <li>Delivered reliable electrical repairs and upgrades across multiple sites.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <h3>Owl Electrical</h3>
+            <button type="button" class="detail-toggle"><i class="bi bi-chevron-down"></i> Show details</button>
+          </div>
+          <p class="timeline-meta">Apprentice / Electrician | 2013 - 2016</p>
+          <div class="detail-content">
+            <ul>
+              <li>Completed apprenticeship work in commercial and domestic electrical projects.</li>
+              <li>Built a strong foundation in safety, diagnostics, and standards.</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="projects" class="tab-content">
+    <section id="projects" class="tab-content" role="tabpanel">
       <h2>Projects</h2>
       <div class="project-grid">
-        <div class="project-card">
+        <article class="project-card">
+          <div class="project-icon"><i class="bi bi-phone-fill"></i></div>
           <h3>Interactive CV App</h3>
-          <p>This very app! Built with HTML, CSS, JS to showcase skills interactively.</p>
+          <p>This very app! Built with HTML, CSS, and JS to showcase skills interactively.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
           <a href="https://nick-app.vercel.app" class="project-link">View Live</a>
-        </div>
-        <div class="project-card">
+        </article>
+        <article class="project-card">
+          <div class="project-icon"><i class="bi bi-laptop-fill"></i></div>
           <h3>Python GUI Tools</h3>
-          <p>Custom automation and inventory management tools for engineering workflows.</p>
+          <p>Custom automation and inventory apps for engineering workflows.</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Automation</span>
+            <span class="project-tag">Tkinter</span>
+          </div>
           <a href="#" class="project-link">View on GitHub</a>
-        </div>
-        <div class="project-card">
+        </article>
+        <article class="project-card">
+          <div class="project-icon"><i class="bi bi-sun-fill"></i></div>
           <h3>Solar System Designs</h3>
           <p>Designed and implemented efficient solar solutions for residential and commercial sites.</p>
+          <div class="project-tags">
+            <span class="project-tag">Solar</span>
+            <span class="project-tag">Design</span>
+            <span class="project-tag">Commissioning</span>
+          </div>
           <a href="#" class="project-link">View Portfolio</a>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section id="contact" class="tab-content">
+    <section id="gallery" class="tab-content" role="tabpanel">
+      <h2>PV Installation Gallery</h2>
+      <p>Showcasing solar photovoltaic installations — AI-generated images representing real-world projects.</p>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=400&h=300&fit=crop" alt="Residential solar panel installation on rooftop">
+          <figcaption>Residential rooftop installation</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Commercial solar farm with panels and inverters">
+          <figcaption>Commercial solar farm setup</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=300&fit=crop" alt="Solar panels on industrial building">
+          <figcaption>Industrial building installation</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Solar panel array with monitoring equipment">
+          <figcaption>Monitoring and commissioning</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop" alt="Solar installation team at work">
+          <figcaption>Installation team in action</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=300&fit=crop" alt="Completed solar system with energy meter">
+          <figcaption>Completed system with metering</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contact" class="tab-content" role="tabpanel">
       <h2>Contact</h2>
-      <form id="contactForm">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="4" required></textarea>
+      <div class="contact-intro">
+        <p>Ready to connect? Send a message or copy my email address to reach out directly.</p>
+        <button id="copyEmail" class="icon-button copy-button"><i class="bi bi-clipboard-fill"></i> Copy Email</button>
+      </div>
+      <form id="contactForm" action="https://formsubmit.co/nidiaco03@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from your CV site">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://nick-app.vercel.app/">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
         <button type="submit">Send Message</button>
       </form>
       <div id="formMessage"></div>
-      <p>Email: <a href="mailto:Nidiaco03@gmail.com">Nidiaco03@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/nicolas-diacono" target="_blank">linkedin.com/in/nicolas-diacono</a></p>
-      <p>GitHub: <a href="https://github.com/Nidiaco" target="_blank">github.com/Nidiaco</a></p>
-      <p>Location: Christchurch, New Zealand</p>
+      <div class="social-links">
+        <a href="mailto:Nidiaco03@gmail.com"><i class="bi bi-envelope-fill"></i>Email</a>
+        <a href="https://www.linkedin.com/in/nicolas-diacono" target="_blank"><i class="bi bi-linkedin"></i>LinkedIn</a>
+        <a href="https://github.com/Nidiaco" target="_blank"><i class="bi bi-github"></i>GitHub</a>
+      </div>
+      <p class="contact-note"><i class="bi bi-geo-alt-fill"></i> Christchurch, New Zealand</p>
     </section>
   </main>
 
