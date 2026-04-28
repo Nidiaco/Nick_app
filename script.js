@@ -61,11 +61,7 @@ function animateSkillBars() {
 }
 
 function handleFormSubmit(e) {
-  e.preventDefault();
-  const formData = new FormData(contactForm);
-  formMessage.textContent = 'Thank you for your message! (This is a demo - no email sent)';
-  formMessage.style.color = 'var(--accent)';
-  contactForm.reset();
+  // Let formsubmit.co handle the submission - no preventDefault
 }
 
 function toggleDetail(event) {
@@ -118,6 +114,10 @@ detailToggles.forEach(toggle => toggle.addEventListener('click', toggleDetail));
 
 if (copyEmailBtn) {
   copyEmailBtn.addEventListener('click', copyEmail);
+}
+
+if (contactForm) {
+  contactForm.addEventListener('submit', handleFormSubmit);
 }
 
 toggleButton.addEventListener('click', () => {

@@ -11,9 +11,17 @@
   <main class="app-shell">
     <header>
       <div class="hero-top">
-        <div>
-          <h1>Nicolas Diacono's Interactive CV</h1>
-          <p>Explore my journey as a Systems Technician and Qualified Electrician.</p>
+        <div class="hero-content">
+          <img src="images/profile.png" alt="Nicolas Diacono" class="hero-photo">
+          <div>
+            <h1>Nicolas Diacono</h1>
+            <p class="hero-subtitle">Systems Technician & Qualified Electrician</p>
+            <p class="hero-desc">Microinverter Engineering • Solar Tech • Automation</p>
+            <div class="hero-links">
+              <a href="https://github.com/Nidiaco" target="_blank" class="social-btn"><i class="bi bi-github"></i> GitHub</a>
+              <a href="https://www.linkedin.com/in/nicolas-diacono" target="_blank" class="social-btn"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            </div>
+          </div>
         </div>
         <button id="toggleButton" class="icon-button"><i class="bi bi-moon-stars-fill"></i> Theme</button>
       </div>
@@ -181,37 +189,51 @@
       <h2>Projects</h2>
       <div class="project-grid">
         <article class="project-card">
-          <div class="project-icon"><i class="bi bi-phone-fill"></i></div>
-          <h3>Interactive CV App</h3>
-          <p>This very app! Built with HTML, CSS, and JS to showcase skills interactively.</p>
+          <div class="project-header">
+            <div class="project-icon"><i class="bi bi-phone-fill"></i></div>
+            <h3>Interactive CV App</h3>
+          </div>
+          <p>Interactive portfolio website with dark/light theme, tabbed navigation, and skill animations.</p>
           <div class="project-tags">
             <span class="project-tag">HTML</span>
             <span class="project-tag">CSS</span>
             <span class="project-tag">JavaScript</span>
           </div>
-          <a href="https://nick-app.vercel.app" class="project-link">View Live</a>
+          <div class="project-actions">
+            <a href="https://nick-app.vercel.app" target="_blank" class="project-link"><i class="bi bi-rocket-fill"></i> Live Demo</a>
+            <a href="https://github.com/Nidiaco/nick-app" target="_blank" class="project-link secondary"><i class="bi bi-github"></i> GitHub</a>
+          </div>
         </article>
         <article class="project-card">
-          <div class="project-icon"><i class="bi bi-laptop-fill"></i></div>
-          <h3>Python GUI Tools</h3>
-          <p>Custom automation and inventory apps for engineering workflows.</p>
+          <div class="project-header">
+            <div class="project-icon"><i class="bi bi-kanban-fill"></i></div>
+            <h3>Pickle Champs</h3>
+          </div>
+          <p>Real-time pickleball session tracker with leaderboards, game scoring, and player stats.</p>
+          <div class="project-tags">
+            <span class="project-tag">Firebase</span>
+            <span class="project-tag">Chart.js</span>
+            <span class="project-tag">Mobile</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://pickle-champs.vercel.app" target="_blank" class="project-link"><i class="bi bi-rocket-fill"></i> Live Demo</a>
+            <a href="https://github.com/Nidiaco/pickle-champs" target="_blank" class="project-link secondary"><i class="bi bi-github"></i> GitHub</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon"><i class="bi bi-laptop-fill"></i></div>
+            <h3>Python Automation Tools</h3>
+          </div>
+          <p>Custom GUI applications for test case generation, inventory management, and data automation.</p>
           <div class="project-tags">
             <span class="project-tag">Python</span>
-            <span class="project-tag">Automation</span>
             <span class="project-tag">Tkinter</span>
+            <span class="project-tag">Automation</span>
           </div>
-          <a href="#" class="project-link">View on GitHub</a>
-        </article>
-        <article class="project-card">
-          <div class="project-icon"><i class="bi bi-sun-fill"></i></div>
-          <h3>Solar System Designs</h3>
-          <p>Designed and implemented efficient solar solutions for residential and commercial sites.</p>
-          <div class="project-tags">
-            <span class="project-tag">Solar</span>
-            <span class="project-tag">Design</span>
-            <span class="project-tag">Commissioning</span>
+          <div class="project-actions">
+            <a href="https://github.com/Nidiaco" target="_blank" class="project-link"><i class="bi bi-github"></i> View on GitHub</a>
           </div>
-          <a href="#" class="project-link">View Portfolio</a>
         </article>
       </div>
     </section>
